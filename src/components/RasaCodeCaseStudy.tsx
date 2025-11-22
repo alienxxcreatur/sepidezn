@@ -1,0 +1,469 @@
+import { motion } from 'motion/react';
+import { ArrowRight, Monitor, Users, TestTube, Lightbulb, Layers, Moon, Sun, Code, CheckCircle2, AlertCircle, Settings, BarChart3, Shield, Layout, Smartphone, Database, GraduationCap, Target, Workflow } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+
+interface RasaCodeCaseStudyProps {
+  onBack: () => void;
+}
+
+export function RasaCodeCaseStudy({ onBack }: RasaCodeCaseStudyProps) {
+  return (
+    <div className="min-h-screen bg-white" dir="rtl">
+      {/* Header */}
+      <div className="relative bg-[#1F1BF5] text-white overflow-hidden">
+        {/* Back Button */}
+        <div className="absolute top-8 right-8 z-20">
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 px-6 py-3 bg-white text-neutral-900 rounded-full hover:bg-neutral-100 transition-colors"
+          >
+            <ArrowRight className="w-5 h-5" />
+            <span>بازگشت</span>
+          </button>
+        </div>
+
+        {/* Image Container */}
+        <div className="relative h-[500px] flex items-center justify-center p-12 pt-24">
+          <div className="relative max-w-4xl w-full">
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXltZW50JTIwa2lvc2t8ZW58MXx8fHwxNzYyNzIyNjIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              alt="سامانه مدیریتی کیوسک"
+              className="w-full h-auto rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+
+        {/* Project Overview Box */}
+        <div className="relative -mt-16 px-12 pb-12 z-10">
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-2xl">
+            <h2 className="text-2xl text-center text-neutral-900 mb-6">بررسی اجمالی پروژه</h2>
+            <div className="text-right">
+              <p className="text-xl text-neutral-700 leading-relaxed mb-4">
+                <span className="text-[#1F1BF5]">سامانه مدیریتی کیوسک‌های پرداخت</span> یک سیستم جامع برای مانیتورینگ و مدیریت کیوسک‌های پرداخت است.
+              </p>
+              <p className="text-lg text-neutral-600 leading-relaxed">
+                این سامانه به تیم‌های نگهداری و پشتیبانی امکان می‌دهد تا وضعیت کیوسک‌ها را در زمان واقعی رصد کنند، مشکلات را سریع شناسایی و رفع کرده، و عملکرد کلی سیستم را بهبود بخشند.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-6xl mx-auto p-8 md:p-12">
+        {/* معرفی پروژه */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-4 mb-8 justify-end">
+            <h2 className="text-4xl">معرفی پروژه</h2>
+            <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
+              <Monitor className="w-8 h-8 text-[#1F1BF5]" />
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-br from-[#1F1BF5]/5 to-[#1F1BF5]/10 rounded-3xl p-8 border-r-4 border-[#1F1BF5] mb-8">
+            <p className="text-xl text-neutral-700 leading-relaxed text-right mb-6">
+              من توی شرکتی کار می‌کردم که تخصصش طراحی و ساخت انواع کیوسک‌های پرداخت بود—از کیوسک‌های رستورانی گرفته تا خیریه، داروخانه و موارد مشابه. توی این پروژه، دو نقش اصلی داشتم:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white/70 rounded-2xl p-6">
+                <div className="flex items-center gap-3 justify-end mb-3">
+                  <h3 className="text-lg">طراحی رابط کاربری کیوسک‌ها</h3>
+                  <div className="w-12 h-12 bg-[#1F1BF5]/10 rounded-xl flex items-center justify-center">
+                    <Smartphone className="w-6 h-6 text-[#1F1BF5]" />
+                  </div>
+                </div>
+                <p className="text-neutral-600 text-right leading-relaxed">
+                  طراحی رابط کاربری برای خود کیوسک‌های پرداخت
+                </p>
+              </div>
+
+              <div className="bg-white/70 rounded-2xl p-6">
+                <div className="flex items-center gap-3 justify-end mb-3">
+                  <h3 className="text-lg">سامانه مدیریتی</h3>
+                  <div className="w-12 h-12 bg-[#1F1BF5]/10 rounded-xl flex items-center justify-center">
+                    <Settings className="w-6 h-6 text-[#1F1BF5]" />
+                  </div>
+                </div>
+                <p className="text-neutral-600 text-right leading-relaxed">
+                  کنترل، مدیریت و مانیتورینگ کیوسک‌ها و تراکنش‌ها
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-3xl p-8">
+            <p className="text-2xl text-[#1F1BF5] text-right mb-6">این کیس استادی برای مورد دوم یعنی سامانه مدیریتی است!</p>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-2xl p-6 text-right">
+                <div className="flex items-center gap-2 justify-end mb-2">
+                  <span className="text-sm text-neutral-500">نقش من</span>
+                  <Users className="w-4 h-4 text-[#1F1BF5]" />
+                </div>
+                <p className="text-lg">طراح UI/UX</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-6 text-right">
+                <div className="flex items-center gap-2 justify-end mb-2">
+                  <span className="text-sm text-neutral-500">مدت زمان</span>
+                  <BarChart3 className="w-4 h-4 text-[#1F1BF5]" />
+                </div>
+                <p className="text-lg">حدود ۱ سال</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-6 text-right">
+                <div className="flex items-center gap-2 justify-end mb-2">
+                  <span className="text-sm text-neutral-500">محیط کاری</span>
+                  <Workflow className="w-4 h-4 text-[#1F1BF5]" />
+                </div>
+                <p className="text-lg">تیم ۳-۴ نفره (دورکاری)</p>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* شناخت کاربران */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-4 mb-8 justify-end">
+            <h2 className="text-4xl">شناخت کاربران و رفتار طراحی</h2>
+            <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
+              <Users className="w-8 h-8 text-[#1F1BF5]" />
+            </div>
+          </div>
+
+          <p className="text-xl text-neutral-700 text-right mb-8 leading-relaxed">
+            ما دو دسته کاربر اصلی داشتیم:
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* کاربر 1 */}
+            <div className="bg-gradient-to-br from-[#1F1BF5]/5 to-blue-50 rounded-3xl p-8 border-r-4 border-[#1F1BF5]">
+              <div className="flex items-center gap-3 justify-end mb-6">
+                <h3 className="text-2xl text-[#1F1BF5]">تیم فنی</h3>
+                <div className="w-14 h-14 bg-[#1F1BF5] rounded-2xl flex items-center justify-center">
+                  <Code className="w-7 h-7 text-white" />
+                </div>
+              </div>
+              <p className="text-lg text-neutral-700 text-right leading-relaxed">
+                تیم فنی خودمون که باید با سامانه کار می‌کرد برای پشتیبانی و مانیتورینگ
+              </p>
+            </div>
+
+            {/* کاربر 2 */}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border-r-4 border-green-500">
+              <div className="flex items-center gap-3 justify-end mb-6">
+                <h3 className="text-2xl text-green-900">مشتری‌ها</h3>
+                <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center">
+                  <Users className="w-7 h-7 text-white" />
+                </div>
+              </div>
+              <p className="text-lg text-neutral-700 text-right leading-relaxed">
+                مشتری‌هایی که کیوسک‌ها رو تهیه می‌کردن، معمولاً آشنا با سیستم‌های اداری ایرانی و نیازمند فضای ساده و آشنا
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+            <p className="text-xl text-neutral-700 text-right leading-relaxed">
+              با توجه به این تفاوت، سعی کردم طراحی رو طوری انجام بدم که <span className="text-[#1F1BF5]">هم کارایی بالا برای تیم فنی</span> داشته باشه، <span className="text-[#1F1BF5]">هم برای مشتری‌ها قابل فهم و کاربردی</span> باشه.
+            </p>
+          </div>
+        </motion.section>
+
+        {/* روش تصمیم‌گیری */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-4 mb-8 justify-end">
+            <h2 className="text-4xl">روش تصمیم‌گیری و تست‌ها</h2>
+            <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
+              <TestTube className="w-8 h-8 text-[#1F1BF5]" />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#1F1BF5]/5 to-purple-50 rounded-3xl p-8 border-r-4 border-[#1F1BF5]">
+            <p className="text-xl text-neutral-700 leading-relaxed text-right mb-6">
+              توی تصمیم‌گیری‌های طراحی از A/B تست ساده استفاده می‌کردم. وقتی بین چند گزینه مردد بودم، یه طراحی اولیه از هرکدوم می‌زدم و با تیم درباره‌ش بحث می‌کردیم.
+            </p>
+            
+            <div className="bg-white/70 rounded-2xl p-6">
+              <div className="flex items-start gap-3 justify-end">
+                <p className="text-lg text-neutral-800 text-right flex-1 leading-relaxed">
+                  این فرآیند باعث شد تصمیماتمون، هم از نظر فنی قابل اجرا باشن، هم از نظر تجربه کاربری بهتر. نتیجه و علت انتخابش داکیومنت میشد چون گاهی برمیگشتیم به راه حل‌های قبلی و دوباره بررسیشون میکردیم!
+                </p>
+                <Database className="w-8 h-8 text-[#1F1BF5] flex-shrink-0 mt-1" />
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* چالش‌ها و یادگیری‌ها */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-4 mb-8 justify-end">
+            <h2 className="text-4xl">چالش‌ها و یادگیری‌های اولیه</h2>
+            <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
+              <Target className="w-8 h-8 text-[#1F1BF5]" />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 mb-6">
+            <p className="text-xl text-neutral-800 text-right mb-6 leading-relaxed">
+              این پروژه اولین تجربه جدی کاری من بود، بنابراین با خیلی از چالش‌های واقعی طراحی در فضای عملیاتی روبه‌رو شدم. به‌مرور یاد گرفتم:
+            </p>
+          </div>
+
+          <div className="grid gap-6">
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+              <div className="flex items-start gap-4 justify-end">
+                <div className="text-right flex-1">
+                  <p className="text-lg text-neutral-700 leading-relaxed">
+                    چطور طراحی‌هام رو با ساختار بک‌اند هماهنگ کنم—مخصوصاً برای سطوح دسترسی و معماری‌های داده متفاوت
+                  </p>
+                </div>
+                <div className="bg-[#1F1BF5]/10 rounded-2xl w-14 h-14 flex items-center justify-center flex-shrink-0">
+                  <Database className="w-7 h-7 text-[#1F1BF5]" />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+              <div className="flex items-start gap-4 justify-end">
+                <div className="text-right flex-1">
+                  <p className="text-lg text-neutral-700 leading-relaxed">
+                    اهمیت ساختار سلسله‌مراتبی سازمانی در طراحی داشبورد و دسترسی‌ها
+                  </p>
+                </div>
+                <div className="bg-[#1F1BF5]/10 rounded-2xl w-14 h-14 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-7 h-7 text-[#1F1BF5]" />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+              <div className="flex items-start gap-4 justify-end">
+                <div className="text-right flex-1">
+                  <p className="text-lg text-neutral-700 leading-relaxed">
+                    درک محدودیت‌های فنی سخت‌افزار کیوسک‌ها و تأثیر اون‌ها بر طراحی UI
+                  </p>
+                </div>
+                <div className="bg-[#1F1BF5]/10 rounded-2xl w-14 h-14 flex items-center justify-center flex-shrink-0">
+                  <Monitor className="w-7 h-7 text-[#1F1BF5]" />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+              <div className="flex items-start gap-4 justify-end">
+                <div className="text-right flex-1">
+                  <p className="text-lg text-neutral-700 leading-relaxed">
+                    هماهنگی با تیم توسعه برای طراحی قابل‌پیاده‌سازی (به‌جای فقط طراحی ایده‌آل)
+                  </p>
+                </div>
+                <div className="bg-[#1F1BF5]/10 rounded-2xl w-14 h-14 flex items-center justify-center flex-shrink-0">
+                  <Code className="w-7 h-7 text-[#1F1BF5]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* سبک طراحی */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-4 mb-8 justify-end">
+            <h2 className="text-4xl">سبک طراحی و دیزاین سیستم</h2>
+            <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
+              <Layers className="w-8 h-8 text-[#1F1BF5]" />
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            {/* دارک مود و لایت مود */}
+            <div className="bg-gradient-to-br from-[#1F1BF5]/5 to-neutral-100 rounded-3xl p-8">
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="bg-neutral-900 rounded-2xl p-6 text-white">
+                  <div className="flex items-center gap-3 justify-end mb-4">
+                    <h3 className="text-xl">دارک مود</h3>
+                    <Moon className="w-6 h-6" />
+                  </div>
+                  <p className="text-neutral-300 text-right leading-relaxed">
+                    برای تیم فنی و استفاده طولانی‌مدت
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-6 border-2 border-neutral-200">
+                  <div className="flex items-center gap-3 justify-end mb-4">
+                    <h3 className="text-xl">لایت مود</h3>
+                    <Sun className="w-6 h-6 text-[#1F1BF5]" />
+                  </div>
+                  <p className="text-neutral-700 text-right leading-relaxed">
+                    برای مشتری‌ها و تجربه خوشایند
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-lg text-neutral-700 text-right leading-relaxed">
+                چون کاربران اصلی اولیه‌ی سامانه، خودمون (تیم فنی) بودیم، از اول طراحی رو با <span className="text-[#1F1BF5]">دارک‌مود</span> شروع کردم. بعداً برای مشتری‌ها، <span className="text-[#1F1BF5]">لایت‌مود</span> هم اضافه شد.
+              </p>
+            </div>
+
+            {/* Neumorphism */}
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+              <div className="flex items-start gap-4 justify-end mb-6">
+                <div className="text-right flex-1">
+                  <h3 className="text-2xl text-[#1F1BF5] mb-3">استفاده هوشمند از Neumorphism</h3>
+                  <p className="text-lg text-neutral-700 leading-relaxed">
+                    برای اینکه ظاهر طراحی یکنواخت و خشک نشه، به‌صورت خیلی کنترل‌شده‌ای از neumorphism استفاده کردم؛ فقط تا جایی که به تجربه کاربری آسیبی نزنه یا باعث سختی در پیاده‌سازی نشه.
+                  </p>
+                </div>
+                <Layout className="w-12 h-12 text-[#1F1BF5] flex-shrink-0" />
+              </div>
+            </div>
+
+            {/* Design System */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border-r-4 border-purple-500">
+              <div className="flex items-center gap-3 justify-end mb-6">
+                <h3 className="text-2xl text-purple-900">دیزاین سیستم اختصاصی</h3>
+                <div className="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center">
+                  <Layers className="w-7 h-7 text-white" />
+                </div>
+              </div>
+              <p className="text-lg text-neutral-700 text-right leading-relaxed">
+                از لحاظ طراحی سیستم هم از قواعد و اندازه‌های <span className="text-purple-700">Tailwind</span> پیروی کردم، ولی تلاش کردم یک طراحی سیستم اختصاصی خودم بسازم که روی قواعد Tailwind بنا شده باشه. این تجربه باعث شد با وجود سختی‌ها و خطاهایی که اول کار داشتم، درک عمیق‌تری از یکپارچگی طراحی و ساختار مؤلفه‌ها پیدا کنم.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* چالش‌های حل شده */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-4 mb-8 justify-end">
+            <h2 className="text-4xl">چالش‌ها و پیچیدگی‌های حل‌شده</h2>
+            <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
+              <CheckCircle2 className="w-8 h-8 text-[#1F1BF5]" />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 mb-6">
+            <p className="text-xl text-neutral-800 text-right leading-relaxed mb-6">
+              این پروژه پر از ساختارهای پیچیده بود، به‌خصوص:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+              <div className="flex items-start gap-4 justify-end mb-4">
+                <div className="text-right flex-1">
+                  <h3 className="text-xl mb-3 text-[#1F1BF5]">پیکربندی دقیق کیوسک‌ها</h3>
+                  <p className="text-neutral-700 leading-relaxed">
+                    طراحی رابط پیچیده برای تنظیمات دقیق کیوسک‌ها
+                  </p>
+                </div>
+                <div className="bg-[#1F1BF5] rounded-2xl w-14 h-14 flex items-center justify-center flex-shrink-0">
+                  <Settings className="w-7 h-7 text-white" />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+              <div className="flex items-start gap-4 justify-end mb-4">
+                <div className="text-right flex-1">
+                  <h3 className="text-xl mb-3 text-[#1F1BF5]">سلسله‌مراتب سازمانی</h3>
+                  <p className="text-neutral-700 leading-relaxed">
+                    تعریف و مدیریت سطوح دسترسی مختلف
+                  </p>
+                </div>
+                <div className="bg-[#1F1BF5] rounded-2xl w-14 h-14 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-7 h-7 text-white" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#1F1BF5]/5 to-blue-50 rounded-3xl p-8 border-r-4 border-[#1F1BF5]">
+            <div className="flex items-start gap-4 justify-end mb-6">
+              <div className="text-right flex-1">
+                <h3 className="text-2xl text-[#1F1BF5] mb-4">رویکرد Desktop-First با تفکر Responsive</h3>
+                <p className="text-lg text-neutral-700 leading-relaxed mb-4">
+                  پروژه Desktop-first بود، اما از همون اول حواسم به ریسپانسیو بودن اجزا بود.
+                </p>
+                <div className="bg-white/70 rounded-2xl p-6">
+                  <div className="flex items-start gap-3 justify-end">
+                    <p className="text-lg text-neutral-800 text-right flex-1 leading-relaxed">
+                      برای همین، از جداول سنگین کمتر استفاده کردیم و بیشتر <span className="text-[#1F1BF5]">کارت‌محور</span> جلو رفتیم تا راحت‌تر توی نسخه‌های موبایل هم پیاده‌سازی بشن.
+                    </p>
+                    <Smartphone className="w-8 h-8 text-[#1F1BF5] flex-shrink-0 mt-1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-white rounded-3xl p-8 border border-neutral-200 shadow-lg">
+            <p className="text-xl text-neutral-700 text-right leading-relaxed">
+              با توجه به داده‌های متنوع و سناریوهای مختلفی که وجود داشت، تمام تلاشم این بود که در تمام سیستم، یه <span className="text-[#1F1BF5]">Consistency حفظ کنم</span> و برای هر نیازی، راه حلی پیدا کنم که انسجام طراحی رو به‌هم نزنه.
+            </p>
+          </div>
+        </motion.section>
+
+        {/* یادگیری‌ها */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="mb-8"
+        >
+          <div className="flex items-center gap-4 mb-8 justify-end">
+            <h2 className="text-4xl">یادگیری‌ها</h2>
+            <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
+              <GraduationCap className="w-8 h-8 text-[#1F1BF5]" />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#1F1BF5] to-[#1F1BF5]/80 rounded-3xl p-8 text-white">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="text-5xl">🎓</div>
+              <h3 className="text-3xl">تجربه‌ای همه‌جانبه</h3>
+            </div>
+            <p className="text-xl leading-relaxed text-right mb-6">
+              این پروژه برای من مثل یه مدرسه بود؛ همه‌چیز رو در عمل یاد گرفتم.
+            </p>
+            <div className="bg-white/10 rounded-2xl p-6">
+              <p className="text-xl leading-relaxed text-right">
+                از همون اول با چالش‌های واقعی روبرو شدم و مجبور شدم یاد بگیرم چطور تصمیم‌هام در طراحی روی کل تیم اثر می‌ذاره.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+      </div>
+    </div>
+  );
+}
