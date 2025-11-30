@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
-import { Menu, X, Languages } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 interface NavigationProps {
@@ -33,6 +33,14 @@ export function Navigation({
         setMobileMenuOpen(false);
     };
 
+    // Function to trigger PDF download
+    const handleDownloadResume = () => {
+        const link = document.createElement("a");
+        link.href = "../../assets/Sepide Zeinalzadegan.pdf"; // path to your PDF file in assets folder
+        link.download = "resume.pdf"; // the filename to save the file as
+        link.click();
+    };
+
     return (
         <>
             <motion.nav
@@ -56,12 +64,19 @@ export function Navigation({
                     {/* Desktop Menu */}
                     <div className="hidden md:flex gap-8 items-center">
                         {[
-                            { id: "hero", label: t("nav.home") },
-                            { id: "resume", label: t("nav.resume") },
+                            // { id: "hero", label: t("nav.home") },
+                            {
+                                id: "resume",
+                                label: t("nav.resume"),
+                                onClick: handleDownloadResume, // Adding onClick for download
+                            },
                         ].map((item, index) => (
                             <motion.button
                                 key={item.id}
-                                onClick={() => scrollToSection(item.id)}
+                                onClick={
+                                    item.onClick ||
+                                    (() => scrollToSection(item.id))
+                                }
                                 className="relative group"
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -108,13 +123,19 @@ export function Navigation({
                 className="fixed inset-0 bg-white z-40 md:hidden flex flex-col items-center justify-center gap-8"
             >
                 {[
-                    { id: "hero", label: t("nav.home") },
-                    { id: "resume", label: t("nav.resume") },
+                    // { id: "hero", label: t("nav.home") },
+                    {
+                        id: "resume",
+                        label: t("nav.resume"),
+                        onClick: handleDownloadResume,
+                    },
                     { id: "contact", label: "Get In Touch" },
                 ].map((item) => (
                     <button
                         key={item.id}
-                        onClick={() => scrollToSection(item.id)}
+                        onClick={
+                            item.onClick || (() => scrollToSection(item.id))
+                        }
                         className="text-3xl hover:text-[#1F1BF5] transition-colors"
                     >
                         {item.label}

@@ -2616,7 +2616,7 @@
 
 @font-face {
   font-family: Yekan Bakh;
-  src: url("/assets/Yekan_Bakh_Fanum.ttf") format("truetype");
+  src: url("/assets/fonts/yekan/YekanBakh-VF.woff") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

@@ -3,10 +3,12 @@ import { useInView } from "./hooks/useInView";
 import { ProjectCard } from "./ProjectCard";
 import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { Link } from "react-router-dom"; // Importing Link for navigation
 
 const projects = [
     {
         id: "2",
+        slug: "ibcentra",
         title: "IBCentra",
         category: "Business Education",
         description:
@@ -18,6 +20,7 @@ const projects = [
     },
     {
         id: "9",
+        slug: "barpardaz",
         title: "Barpardaz",
         category: "Fintech",
         description:
@@ -29,6 +32,7 @@ const projects = [
     },
     {
         id: "7",
+        slug: "fiotrix",
         title: "Fiotrix",
         category: "Project Management",
         description:
@@ -40,6 +44,7 @@ const projects = [
     },
     {
         id: "10",
+        slug: "reminder-agent",
         title: "Reminder Agent",
         category: "AI Chatbot",
         description:
@@ -51,10 +56,11 @@ const projects = [
     },
     {
         id: "1",
+        slug: "wallet",
         title: "Wallet App",
         category: "Mobile App",
         description:
-            "A mobile app for managing cryptocurrency transactions securely.",
+            "A mobile app for securely managing cryptocurrency transactions efficiently.",
         tags: ["app", "cryptocurrency"],
         gradient: "from-[#1F1BF5] to-[#1F1BF5]/80",
         accentColor: "border-[#1F1BF5]/30",
@@ -62,6 +68,7 @@ const projects = [
     },
     {
         id: "11",
+        slug: "rasacode",
         title: "Rasa Code",
         category: "Payment Management",
         description:
@@ -72,17 +79,8 @@ const projects = [
         image: "/assets/images/rasacode.png",
     },
     {
-        id: "3",
-        title: "Rasa Food",
-        category: "Self-Service",
-        description: "A self-service kiosk for food ordering in restaurants.",
-        tags: ["kiosk", "foodordering"],
-        gradient: "from-[#1F1BF5] to-[#1F1BF5]/80",
-        accentColor: "border-[#1F1BF5]/30",
-        image: "/assets/images/rasafood.png",
-    },
-    {
         id: "4",
+        slug: "ceo-assist",
         title: "CEO Assist",
         category: "Business AI",
         description:
@@ -94,6 +92,7 @@ const projects = [
     },
     {
         id: "12",
+        slug: "visera",
         title: "Visera",
         category: "Medical Imaging",
         description:
@@ -105,11 +104,7 @@ const projects = [
     },
 ];
 
-export function Projects({
-    onProjectClick,
-}: {
-    onProjectClick: (id: string) => void;
-}) {
+export function Projects() {
     const { ref, isInView } = useInView();
     const { t } = useLanguage();
 
@@ -144,11 +139,13 @@ export function Projects({
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
                         <div key={project.id}>
-                            <ProjectCard
-                                project={project}
-                                index={index}
-                                onClick={() => onProjectClick(project.id)}
-                            />
+                            <Link to={`/project/${project.slug || project.id}`}>
+                                <ProjectCard
+                                    project={project}
+                                    index={index}
+                                    onClick={() => {}}
+                                />
+                            </Link>
                         </div>
                     ))}
                 </div>

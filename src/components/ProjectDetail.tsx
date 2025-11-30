@@ -34,43 +34,59 @@ interface ProjectDetailProps {
 }
 
 export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
+    // Support both numeric IDs and slug paths (e.g. /project/visera)
+    const slugToId: Record<string, string> = {
+        visera: "12",
+        rasacode: "11",
+        "reminder-agent": "10",
+        fiotrix: "7",
+        barpardaz: "9",
+        "ceo-assist": "4",
+        "food-kiosk": "3",
+        wallet: "1",
+        ibcentra: "2",
+    };
+
+    const normalizedId = /^[0-9]+$/.test(projectId)
+        ? projectId
+        : slugToId[projectId?.toLowerCase() ?? ""] || projectId;
     // Visera Case Study
-    if (projectId === "12") {
+    if (normalizedId === "12") {
         return <ViseraCaseStudy onBack={onBack} />;
     }
 
     // Rasa Code Case Study
-    if (projectId === "11") {
+    if (normalizedId === "11") {
         return <RasaCodeCaseStudy onBack={onBack} />;
     }
 
     // Reminder Agent Case Study
-    if (projectId === "10") {
+    if (normalizedId === "10") {
         return <ReminderAgentCaseStudy onBack={onBack} />;
     }
 
     // Fiotrix Case Study
-    if (projectId === "7") {
+    if (normalizedId === "7") {
         return <FiotrixCaseStudy onBack={onBack} />;
     }
 
     // Barpardaz Case Study
-    if (projectId === "9") {
+    if (normalizedId === "9") {
         return <BarpardazCaseStudy onBack={onBack} />;
     }
 
     // CEO Assist Case Study
-    if (projectId === "4") {
+    if (normalizedId === "4") {
         return <CEOAssistCaseStudy onBack={onBack} />;
     }
 
     // Food Kiosk Case Study
-    if (projectId === "3") {
+    if (normalizedId === "3") {
         return <FoodKioskCaseStudy onBack={onBack} />;
     }
 
     // Wallet App Case Study Content
-    if (projectId === "1") {
+    if (normalizedId === "1") {
         return (
             <div className="min-h-screen bg-white">
                 {/* Header - CEO Assist Style */}
@@ -95,8 +111,10 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                             />
                         </div>
                     </div>
+                    {/* Blue band under header - increased height so it reaches roughly half of Project Overview Box */}
+                    <div className="bg-[#1F1BF5] h-48 md:h-64" />
                     {/* Project Overview Box */}
-                    <div className="relative -mt-16 px-12 pb-12 z-10">
+                    <div className="relative -mt-28 px-12 pb-12 z-10">
                         <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-2xl">
                             <h2 className="text-2xl text-center text-neutral-900 mb-6">
                                 Project Overview
@@ -648,104 +666,53 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                             ))}
                         </div>
                     </motion.section>
-
-                    {/* Features & Functionalities */}
-                    <motion.section
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 1.3 }}
-                        className="mb-16"
-                    >
-                        <h2 className="text-4xl mb-8">
-                            Features & Functionalities
-                        </h2>
-                        <p className="text-xl text-neutral-600 mb-8">
-                            To resolve user needs
-                        </p>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {[
-                                {
-                                    title: "Easy Transactions",
-                                    icon: Zap,
-                                    color: "from-blue-500 to-blue-600",
-                                },
-                                {
-                                    title: "Secure Storage",
-                                    icon: Shield,
-                                    color: "from-green-500 to-green-600",
-                                },
-                                {
-                                    title: "Multi-Currency Support",
-                                    icon: Wallet,
-                                    color: "from-purple-500 to-purple-600",
-                                },
-                                {
-                                    title: "User-Friendly Interface",
-                                    icon: Layout,
-                                    color: "from-orange-500 to-orange-600",
-                                },
-                            ].map((feature) => (
-                                <div
-                                    key={feature.title}
-                                    className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-lg hover:shadow-xl transition-shadow"
-                                >
-                                    <div
-                                        className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center mb-4`}
-                                    >
-                                        <feature.icon className="w-7 h-7 text-white" />
-                                    </div>
-                                    <h3 className="text-lg">{feature.title}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.section>
                 </div>
             </div>
         );
     }
 
     // IBCentra Case Study Content
-    if (projectId === "2") {
+    if (normalizedId === "2") {
         return (
             <div className="min-h-screen bg-white text-right" dir="rtl">
-                {/* Header with Image */}
-                <div className="relative bg-gradient-to-br from-[#1F1BF5] to-[#1F1BF5]/80 text-white overflow-hidden">
-                    {/* Hero Image */}
-                    <div className="relative h-[400px] w-full">
-                        <ImageWithFallback
-                            src="https://images.unsplash.com/photo-1668092547067-8623b1f9e082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGVkdWNhdGlvbiUyMGxlYXJuaW5nfGVufDF8fHx8MTc2MjcwNzg0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                            alt="IBCentra Business Education"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#1F1BF5]/80 via-[#1F1BF5]/60 to-[#1F1BF5]" />
-                    </div>
-
-                    {/* Header Content */}
-                    <div className="relative p-12">
+                <div className="relative bg-[#1F1BF5] text-white overflow-hidden pt[64px]">
+                    {/* Back Button */}
+                    <div className="absolute top-8 right-8 z-20">
                         <button
                             onClick={onBack}
-                            className="mb-8 flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors flex-row-reverse"
+                            className="flex items-center gap-2 px-6 py-3 bg-white text-neutral-900 rounded-full hover:bg-neutral-100 transition-colors"
                         >
-                            <span>بازگشت به صفحه اصلی</span>
                             <ArrowRight className="w-5 h-5" />
+                            <span>بازگشت</span>
                         </button>
+                    </div>
 
-                        <div className="max-w-6xl mx-auto">
-                            <motion.div
-                                initial={{ x: 20, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                transition={{ delay: 0.2 }}
-                            >
-                                <span className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm mb-4">
-                                    مطالعه موردی
-                                </span>
-                                <h1 className="text-5xl mb-4 text-right">
-                                    IBCentra - آموزش بیزینس
-                                </h1>
-                                <p className="text-xl text-white/80 text-right">
-                                    پلتفرم آموزش و کوچینگ کسب‌وکار
+                    {/* Image Container */}
+                    <div className="relative h-[500px] flex items-center justify-center p-12 pt-24 mt-16">
+                        <div className="relative max-w-3xl w-full">
+                            <ImageWithFallback
+                                src="../../assets/images/casestudy/ibcentra/ibcentra-header.png"
+                                alt="سامانه مدیریتی کیوسک"
+                                className="w-full h-auto rounded-2xl "
+                            />
+                        </div>
+                    </div>
+
+                    {/* Project Overview Box */}
+                    <div className="relative -mt-16 px-12 pb-12 z-10">
+                        <div className="max-w-5xl mx-auto bg-white rounded-3xl p-8 shadow-2xl">
+                            <h2 className="text-2xl text-right text-orange-500 mb-6">
+                                یکپارچه‌سازی آموزش، ارتباط و رشد{" "}
+                            </h2>
+                            <div className="text-right">
+                                <p className="text-xl text-neutral-700 leading-relaxed mb-4">
+                                    در این پروژه یک سامانه یکپارچه برای مدیریت و
+                                    بهبود تجربه دوره‌های بیزینس کوچینگ طراحی شد.
+                                    هدف، ساده‌سازی ارتباط بین کوچ‌ها و
+                                    دانش‌پذیران و ایجاد بستری برای استمرار
+                                    یادگیری درون و بیرون کلاس بود.{" "}
                                 </p>
-                            </motion.div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -815,8 +782,6 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                             </div>
                             <h2 className="text-4xl text-right">تحلیل رقبا</h2>
                         </div>
-
-                       
 
                         <div className="space-y-6">
                             {/* Main content paragraphs */}
@@ -1076,9 +1041,6 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                                 User Research
                             </h2>
                         </div>
-
-                       
-                       
 
                         <div className="mb-8">
                             <p className="text-xl text-neutral-700 leading-relaxed text-right">
@@ -1433,9 +1395,7 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                             <h2 className="text-4xl">اهداف اصلی</h2>
                         </div>
 
-                        <div className="mb-6">
-                            
-                        </div>
+                        <div className="mb-6"></div>
 
                         <div className="space-y-4">
                             {/* Objective 1 */}
@@ -1547,9 +1507,7 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                             </h2>
                         </div>
 
-                        <div className="mb-6">
-                            
-                        </div>
+                        <div className="mb-6"></div>
 
                         {/* Context Paragraphs */}
                         <div className="space-y-6 mb-8">
@@ -1654,15 +1612,17 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                         </div>
                         {/* IBCentra — full-width responsive screens column */}
                         <div className="mt-12 space-y-6">
-                            {[1,2,3,4,5,6,7,8,9,10,11,12].map((n) => (
-                                <div key={n} className="w-full">
-                                    <ImageWithFallback
-                                        src={`/assets/images/casestudy/ibcentra/text/${n}.png`}
-                                        alt={`IBCentra screen ${n}`}
-                                        className="w-full h-auto object-contain rounded-2xl"
-                                    />
-                                </div>
-                            ))}
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
+                                (n) => (
+                                    <div key={n} className="w-full">
+                                        <ImageWithFallback
+                                            src={`/assets/images/casestudy/ibcentra/text/${n}.png`}
+                                            alt={`IBCentra screen ${n}`}
+                                            className="w-full h-auto object-contain rounded-2xl"
+                                        />
+                                    </div>
+                                )
+                            )}
                         </div>
                     </motion.section>
                 </div>
