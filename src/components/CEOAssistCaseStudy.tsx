@@ -46,13 +46,13 @@ export function CEOAssistCaseStudy({ onBack }: CEOAssistCaseStudyProps) {
 
     // آدرس تصاویر برای هر بخش
     const landingImages = [
-        "/assets/images/casestudy/ceoassist/landing/Blue(Chatbot).png",
-        "/assets/images/casestudy/ceoassist/landing/About Us.png",
-        "/assets/images/casestudy/ceoassist/landing/Blog.png",
-        "/assets/images/casestudy/ceoassist/landing/Blog Details.png",
-        "/assets/images/casestudy/ceoassist/landing/Contact US.png",
+        "/assets/images/casestudy/ceoassist/landing/Blue(Chatbot).webp",
+        "/assets/images/casestudy/ceoassist/landing/About Us.webp",
+        "/assets/images/casestudy/ceoassist/landing/Blog.webp",
+        "/assets/images/casestudy/ceoassist/landing/Blog Details.webp",
+        "/assets/images/casestudy/ceoassist/landing/Contact US.webp",
         "/assets/images/casestudy/ceoassist/landing/Get Pwa.png",
-        "/assets/images/casestudy/ceoassist/landing/emptt.png",
+        "/assets/images/casestudy/ceoassist/landing/emptt.webp",
     ];
 
     // Handle image click to open modal and set the current image
@@ -736,7 +736,7 @@ export function CEOAssistCaseStudy({ onBack }: CEOAssistCaseStudyProps) {
                         {["blue", "orange"].map((num) => (
                             <div key={num} className="overflow-hidden">
                                 <ImageWithFallback
-                                    src={`/assets/images/casestudy/ceoassist/${num}.png`}
+                                    src={`/assets/images/casestudy/ceoassist/${num}.webp`}
                                     alt={`تصویر ${num}`}
                                     className="w-full h-auto object-contain"
                                 />

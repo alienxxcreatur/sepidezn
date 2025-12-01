@@ -14,6 +14,7 @@ import {
     Clock,
     Shield,
     FileText,
+    Pen,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
@@ -41,7 +42,7 @@ export function BarpardazCaseStudy({ onBack }: BarpardazCaseStudyProps) {
                 <div className="relative h-[500px] flex items-center justify-center p-12 pt-24">
                     <div className="relative max-w-4xl w-full">
                         <ImageWithFallback
-                            src="../../assets/images/casestudy/barpardaz/barpardaz_header.png"
+                            src="../../assets/images/casestudy/barpardaz/barpardaz_header.webp"
                             alt="بارپرداز"
                             className="w-full h-auto rounded-2xl "
                         />
@@ -51,9 +52,6 @@ export function BarpardazCaseStudy({ onBack }: BarpardazCaseStudyProps) {
                 {/* Project Overview Box */}
                 <div className="relative -mt-16 px-12 pb-12 z-10">
                     <div className="max-w-5xl mx-auto bg-white rounded-3xl p-8 pt[64px]">
-                        <h2 className="text-2xl text-right text-neutral-900 mb-6">
-                            بررسی اجمالی پروژه
-                        </h2>
                         <div className="text-right">
                             <p className="text-xl text-neutral-700 leading-relaxed mb-4">
                                 <span className="text-[#1F1BF5]">بارپرداز</span>{" "}
@@ -934,7 +932,7 @@ export function BarpardazCaseStudy({ onBack }: BarpardazCaseStudyProps) {
                 >
                     <div className="flex items-center gap-4 mb-8 justify-start">
                         <div className="w-16 h-16 bg-[#1F1BF5]/10 rounded-2xl flex items-center justify-center">
-                            <FileText className="w-8 h-8 text-[#1F1BF5]" />
+                            <Pen className="w-8 h-8 text-[#1F1BF5]" />
                         </div>
                         <h2 className="text-4xl">ریدیزاین لندینگ پیچ </h2>
                     </div>
@@ -949,7 +947,7 @@ export function BarpardazCaseStudy({ onBack }: BarpardazCaseStudyProps) {
                                         </h3>
                                         <div className="bg-white rounded-3xl border-2 border-neutral-200 shadow-xl mb-4 overflow-hidden flex items-center justify-center">
                                             <ImageWithFallback
-                                                src="/assets/images/casestudy/barpardaz/oldlanding.png"
+                                                src="/assets/images/casestudy/barpardaz/oldlanding.webp"
                                                 alt="صفحه انتخاب اعتبار"
                                                 className="w-full h-auto object-contain"
                                             />
@@ -961,7 +959,7 @@ export function BarpardazCaseStudy({ onBack }: BarpardazCaseStudyProps) {
                                         </h3>
                                         <div className="bg-white rounded-3xl border-2 border-neutral-200 shadow-xl mb-4 overflow-hidden flex items-center justify-center">
                                             <ImageWithFallback
-                                                src="/assets/images/casestudy/barpardaz/landingnew.png"
+                                                src="/assets/images/casestudy/barpardaz/landingnew.webp"
                                                 alt="صفحه انتخاب اعتبار"
                                                 className="w-full h-auto object-contain"
                                             />

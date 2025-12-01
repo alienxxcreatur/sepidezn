@@ -14,41 +14,41 @@ export function RasaCodeCaseStudy({ onBack }: RasaCodeCaseStudyProps) {
 
   // آدرس تصاویر برای هر بخش
   const kioskImages = [
-    '/assets/images/casestudy/rasacode/kiosk/1.png',
-    '/assets/images/casestudy/rasacode/kiosk/2.png',
-    '/assets/images/casestudy/rasacode/kiosk/3.png',
-    '/assets/images/casestudy/rasacode/kiosk/4.png',
-    '/assets/images/casestudy/rasacode/kiosk/5.png',
-    '/assets/images/casestudy/rasacode/kiosk/6.png',
-    '/assets/images/casestudy/rasacode/kiosk/7.png',
-    '/assets/images/casestudy/rasacode/kiosk/8.png',
+    '/assets/images/casestudy/rasacode/kiosk/1.webp',
+    '/assets/images/casestudy/rasacode/kiosk/2.webp',
+    '/assets/images/casestudy/rasacode/kiosk/3.webp',
+    '/assets/images/casestudy/rasacode/kiosk/4.webp',
+    '/assets/images/casestudy/rasacode/kiosk/5.webp',
+    '/assets/images/casestudy/rasacode/kiosk/6.webp',
+    '/assets/images/casestudy/rasacode/kiosk/7.webp',
+    '/assets/images/casestudy/rasacode/kiosk/8.webp',
   ];
 
   const userImages = [
-    '/assets/images/casestudy/rasacode/users/1.png',
-    '/assets/images/casestudy/rasacode/users/2.png',
-    '/assets/images/casestudy/rasacode/users/3.png',
-    '/assets/images/casestudy/rasacode/users/4.png',
+    '/assets/images/casestudy/rasacode/users/1.webp',
+    '/assets/images/casestudy/rasacode/users/2.webp',
+    '/assets/images/casestudy/rasacode/users/3.webp',
+    '/assets/images/casestudy/rasacode/users/4.webp',
   ];
 
   const salesImages = [
-    '/assets/images/casestudy/rasacode/sales/1.png',
-    '/assets/images/casestudy/rasacode/sales/2.png',
-    '/assets/images/casestudy/rasacode/sales/3.png',
+    '/assets/images/casestudy/rasacode/sales/1.webp',
+    '/assets/images/casestudy/rasacode/sales/2.webp',
+    '/assets/images/casestudy/rasacode/sales/3.webp',
   ];
 
   const lightImages = [
-    '/assets/images/casestudy/rasacode/kiosk/light/1.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/2.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/3.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/4.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/5.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/6.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/7.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/8.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/9.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/10.png',
-    '/assets/images/casestudy/rasacode/kiosk/light/11.png',
+    '/assets/images/casestudy/rasacode/kiosk/light/1.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/2.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/3.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/4.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/5.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/6.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/7.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/8.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/9.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/10.webp',
+    '/assets/images/casestudy/rasacode/kiosk/light/11.webp',
 
     
   ];
@@ -117,9 +117,9 @@ export function RasaCodeCaseStudy({ onBack }: RasaCodeCaseStudyProps) {
 
         {/* Image Container */}
         <div className="relative h-[500px] flex items-center justify-center p-12 pt-24">
-          <div className="relative max-w-4xl w-full">
+          <div className="relative max-w-2xl w-full">
             <ImageWithFallback
-              src="../../assets/images/casestudy/rasacode/rasacode_header.png"
+              src="../../assets/images/casestudy/rasacode/rasacode_header.webp"
               alt="سامانه مدیریتی کیوسک"
               className="w-full h-auto rounded-2xl "
             />
@@ -129,7 +129,6 @@ export function RasaCodeCaseStudy({ onBack }: RasaCodeCaseStudyProps) {
         {/* Project Overview Box */}
         <div className="relative -mt-16 px-12 pb-12 z-10">
           <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-2xl">
-            <h2 className="text-2xl text-center text-neutral-900 mb-6">بررسی اجمالی پروژه</h2>
             <div className="text-right">
               <p className="text-xl text-neutral-700 leading-relaxed mb-4">
                 <span className="text-[#1F1BF5]">سامانه مدیریتی کیوسک‌های پرداخت</span> یک سیستم جامع برای مانیتورینگ و مدیریت کیوسک‌های پرداخت است.

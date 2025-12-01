@@ -158,16 +158,16 @@ export function FiotrixCaseStudy({ onBack }: FiotrixCaseStudyProps) {
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(-1);
 
     const landingImages = [
-        "/assets/images/casestudy/fiotrix/landing/landing.png",
-        "/assets/images/casestudy/fiotrix/landing/About us.png",
-        "/assets/images/casestudy/fiotrix/landing/blogs.png",
-        "/assets/images/casestudy/fiotrix/landing/blogs-2.png",
-        "/assets/images/casestudy/fiotrix/landing/Desktop - 12.png",
-        "/assets/images/casestudy/fiotrix/landing/landing-1.png",
-        "/assets/images/casestudy/fiotrix/landing/About us-1.png",
-        "/assets/images/casestudy/fiotrix/landing/blogs-1.png",
-        "/assets/images/casestudy/fiotrix/landing/blogs-3.png",
-        "/assets/images/casestudy/fiotrix/landing/login-light.png",
+        "/assets/images/casestudy/fiotrix/landing/landing.webp",
+        "/assets/images/casestudy/fiotrix/landing/About us.webp",
+        "/assets/images/casestudy/fiotrix/landing/blogs.webp",
+        "/assets/images/casestudy/fiotrix/landing/blogs-2.webp",
+        "/assets/images/casestudy/fiotrix/landing/Desktop - 12.webp",
+        "/assets/images/casestudy/fiotrix/landing/landing-1.webp",
+        "/assets/images/casestudy/fiotrix/landing/About us-1.webp",
+        "/assets/images/casestudy/fiotrix/landing/blogs-1.webp",
+        "/assets/images/casestudy/fiotrix/landing/blogs-3.webp",
+        "/assets/images/casestudy/fiotrix/landing/login-light.webp",
     ];
 
     // Handle image click to open modal and set the current image
@@ -244,7 +244,7 @@ export function FiotrixCaseStudy({ onBack }: FiotrixCaseStudyProps) {
                 <div className="relative h-[500px] flex items-center justify-center p-12 pt-24">
                     <div className="relative max-w-4xl w-full">
                         <ImageWithFallback
-                            src="../../assets/images/casestudy/fiotrix/fiotrix_header.png"
+                            src="../../assets/images/casestudy/fiotrix/fiotrix_header.webp"
                             alt="فیوتریکس"
                             className="w-full h-auto rounded-2xl "
                         />
@@ -1032,7 +1032,7 @@ export function FiotrixCaseStudy({ onBack }: FiotrixCaseStudyProps) {
                                     <ImageWithFallback
                                         src={image}
                                         alt={`تصویر کیوسک ${index + 1}`}
-                                        className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-300 transform group-hover:scale-110"
+                                        className="absolute top-0 left-0 w-full h-full rounded-lg  object-cover transition-all duration-300 transform group-hover:scale-110"
                                         loading="lazy"
                                     />
                                 </div>

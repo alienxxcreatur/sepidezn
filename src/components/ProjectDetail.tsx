@@ -1616,7 +1616,7 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                                 (n) => (
                                     <div key={n} className="w-full">
                                         <ImageWithFallback
-                                            src={`/assets/images/casestudy/ibcentra/text/${n}.png`}
+                                            src={`/assets/images/casestudy/ibcentra/text/${n}.webp`}
                                             alt={`IBCentra screen ${n}`}
                                             className="w-full h-auto object-contain rounded-2xl"
                                         />
